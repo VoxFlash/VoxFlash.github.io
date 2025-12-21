@@ -31,8 +31,10 @@
 
 	</div>
 	<p><b>Abstract</b>
-		Existing large-scale zero-shot text-to-speech (TTS) models deliver high speech quality but suffer from slow inference speeds due to massive parameters. To address this issue, this paper introduces VoxFlash, a high-quality flow-matching-based zero-shot TTS model with a compact model size and fast inference speed. Key designs include: 1) a Zipformer-based flow-matching decoder to maintain adequate modeling capabilities under constrained size; 2) Average upsampling-based initial speech-text alignment and Zipformer-based text encoder to improve speech intelligibility; 3) A flow distillation method to reduce sampling steps and eliminate the inference overhead associated with classifier-free guidance.
-		Experiments on 100k hours multilingual datasets show that VoxFlash matches state-of-the-art models in speech quality, while being 3 times smaller and up to 30 times faster than a DiT-based flow-matching baseline. Codes, model checkpoints and demo samples are publicly available at <a href="https://github.com/k2-fsa/VoxFlash">https://github.com/k2-fsa/VoxFlash</a>. 
+		VoxFlash is a real-time voice cloning engine designed for ultra-low latency and cost-efficient deployment.
+It encodes raw speech waveforms into highly compressed latent representations using a VAE, generates speech in the latent space with a diffusion model, and decodes the results back to high-quality audio through a lightweight decoder.
+
+By operating on extremely short latent sequences, VoxFlash achieves millisecond-level inference, enabling real-time voice cloning even on low-end hardware. This architecture significantly reduces computation, memory usage, and deployment cost, making VoxFlash suitable for edge devices, on-device applications, and large-scale real-time systems.
 	</p>
 	<br>
 	<p>
