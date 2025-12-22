@@ -59,6 +59,17 @@ The VoxFlash VAE employs a lightweight architecture to encode raw speech wavefor
 
 This extreme temporal compression significantly reduces the computational complexity of downstream speech generation models. By shortening the latent sequence length, the overall computation is reduced <b>quadratically</b>, enabling the use of fewer network blocks and dramatically fewer parameters. As a result, the total computational cost is reduced by <b>orders of magnitude</b> compared to conventional speech generation pipelines, while maintaining high audio realism.
 </p>
+
+<p>
+<b>VoxFlash TTS</b>
+    VoxFlash TTS is a low-latency text-to-speech system designed for efficient and scalable speech synthesis. It first encodes phoneme sequences using a lightweight <b>ConvNeXtV2-based</b> network, followed by a <b>novel coarse alignment algorithm</b> that maps textual representations to latent speech sequences with significantly lower computational complexity than cross-attention–based approaches.
+
+Built upon a modern diffusion architecture, VoxFlash TTS predicts speech latents through multi-step iterative refinement, enabling stable and high-quality generation. The generated latent representations are then decoded into waveforms using a lightweight VAE decoder. By combining efficient alignment, compressed latent modeling, and lightweight components, VoxFlash TTS achieves real-time synthesis with substantially reduced computation and model size, making it suitable for on-device and low-resource deployments.
+
+
+</p>
+
+
 	<p>Samples in this demo page are generated with voxFlash (NFE=16)</p>
 </div>
 
@@ -117,6 +128,7 @@ This extreme temporal compression significantly reduces the computational comple
 	<br>
 </div>
 
+<!--
 <div class="container pt-5 mt-5 shadow-lg p-5 mb-5 bg-white rounded">
 	<h2 id="cross_lingual_zero-shot" style="text-align: center;">Cross-Lingual Zero-shot Generation</h2>
 	<p>Prompt and text are from the demo page of Seed-TTS.</p>
@@ -167,7 +179,7 @@ This extreme temporal compression significantly reduces the computational comple
 		</div>
 	<br>
 </div>
-
+-->
 
 
 </article>
