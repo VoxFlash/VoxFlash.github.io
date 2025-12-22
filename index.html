@@ -57,7 +57,7 @@ By operating on extremely short latent sequences, VoxFlash achieves millisecond-
 
 The VoxFlash VAE employs a lightweight architecture to encode raw speech waveforms into highly compressed latent representations. Operating on 24 kHz audio, the model compresses waveforms to only <b>11 frames per second (11 Hz)</b>, achieving a substantially higher compression ratio than existing approaches while preserving high-fidelity speech quality.
 
-This extreme temporal compression significantly reduces the computational complexity of downstream speech generation models. By shortening the latent sequence length, the overall computation is reduced quadratically, enabling the use of fewer network blocks and dramatically fewer parameters. As a result, the total computational cost is reduced by <b>orders of magnitude</b> compared to conventional speech generation pipelines, while maintaining high audio realism.
+This extreme temporal compression significantly reduces the computational complexity of downstream speech generation models. By shortening the latent sequence length, the overall computation is reduced <b>quadratically</b>, enabling the use of fewer network blocks and dramatically fewer parameters. As a result, the total computational cost is reduced by <b>orders of magnitude</b> compared to conventional speech generation pipelines, while maintaining high audio realism.
 </p>
 	<p>Samples in this demo page are generated with voxFlash (NFE=16)</p>
 </div>
