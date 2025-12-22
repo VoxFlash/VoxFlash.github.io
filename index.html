@@ -32,11 +32,16 @@
 	</div>
 	<p><b>Abstract</b>
 		VoxFlash is a real-time voice cloning engine designed for ultra-low latency and cost-efficient deployment.
-It encodes raw speech waveforms into highly compressed latent representations using a VAE, generates speech in the latent space with a diffusion model, and decodes the results back to high-quality audio through a lightweight decoder.
-
-By operating on extremely short latent sequences, VoxFlash achieves millisecond-level inference, enabling real-time voice cloning even on low-end hardware. This architecture significantly reduces computation, memory usage, and deployment cost, making VoxFlash suitable for edge devices, on-device applications, and large-scale real-time systems.
 	</p>
-	<br>
+	<p>
+It encodes raw speech waveforms into highly compressed latent representations using a VAE, generates speech in the latent space with a diffusion model, and decodes the results back to high-quality audio through a lightweight decoder.
+</p>
+<br/>
+<p>
+By operating on extremely short latent sequences, VoxFlash achieves millisecond-level inference, enabling real-time voice cloning even on low-end hardware. This architecture significantly reduces computation, memory usage, and deployment cost, making VoxFlash suitable for edge devices, on-device applications, and large-scale real-time systems.
+
+	</p>
+	<br/>
 	<p>
 	<b>Contents</b>
       <ul>
@@ -56,14 +61,18 @@ By operating on extremely short latent sequences, VoxFlash achieves millisecond-
 	<b>VoxFlash VAE</b>
 
 The VoxFlash VAE employs a lightweight architecture to encode raw speech waveforms into highly compressed latent representations. Operating on 24 kHz audio, the model compresses waveforms to only <b>11 frames per second (11 Hz)</b>, achieving a substantially higher compression ratio than existing approaches while preserving high-fidelity speech quality.
-
+</p>
+<br/>
+<p>
 This extreme temporal compression significantly reduces the computational complexity of downstream speech generation models. By shortening the latent sequence length, the overall computation is reduced <b>quadratically</b>, enabling the use of fewer network blocks and dramatically fewer parameters. As a result, the total computational cost is reduced by <b>orders of magnitude</b> compared to conventional speech generation pipelines, while maintaining high audio realism.
 </p>
 
 <p>
 <b>VoxFlash TTS</b>
     VoxFlash TTS is a low-latency text-to-speech system designed for efficient and scalable speech synthesis. It first encodes phoneme sequences using a lightweight <b>ConvNeXtV2-based</b> network, followed by a <b>novel coarse alignment algorithm</b> that maps textual representations to latent speech sequences with significantly lower computational complexity than cross-attention–based approaches.
-
+</p>
+<br/>
+<p>
 Built upon a modern diffusion architecture, VoxFlash TTS predicts speech latents through multi-step iterative refinement, enabling stable and high-quality generation. The generated latent representations are then decoded into waveforms using a lightweight VAE decoder. By combining efficient alignment, compressed latent modeling, and lightweight components, VoxFlash TTS achieves real-time synthesis with substantially reduced computation and model size, making it suitable for on-device and low-resource deployments.
 
 
