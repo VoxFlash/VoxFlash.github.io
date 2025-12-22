@@ -40,13 +40,27 @@ By operating on extremely short latent sequences, VoxFlash achieves millisecond-
 	<p>
 	<b>Contents</b>
       <ul>
-      
+        <li><a href="#model-overview">Model Overview</a></li>
         <li><a href="#same_language_zero-shot">Same Language Zero-shot Generation</a></li>
 		<li><a href="#cross_lingual_zero-shot">Cross-Lingual Zero-shot Generation</a></li>
       </ul>
 	</p>
 </div>
 
+
+<div class="container pt-5 mt-5 shadow-lg p-5 mb-5 bg-white rounded">		
+	<h2 id="model-overview" style="text-align: center;">Model Overview</h2>
+
+	<p style="text-align: left;" >
+	
+	<b>VoxFlash VAE</b>
+
+The VoxFlash VAE employs a lightweight architecture to encode raw speech waveforms into highly compressed latent representations. Operating on 24 kHz audio, the model compresses waveforms to only <b>11 frames per second (11 Hz)</b>, achieving a substantially higher compression ratio than existing approaches while preserving high-fidelity speech quality.
+
+This extreme temporal compression significantly reduces the computational complexity of downstream speech generation models. By shortening the latent sequence length, the overall computation is reduced quadratically, enabling the use of fewer network blocks and dramatically fewer parameters. As a result, the total computational cost is reduced by <b>orders of magnitude</b> compared to conventional speech generation pipelines, while maintaining high audio realism.
+</p>
+	<p>Samples in this demo page are generated with voxFlash (NFE=16)</p>
+</div>
 
 
 
@@ -102,7 +116,7 @@ By operating on extremely short latent sequences, VoxFlash achieves millisecond-
 		</div>
 	<br>
 </div>
-<!--
+
 <div class="container pt-5 mt-5 shadow-lg p-5 mb-5 bg-white rounded">
 	<h2 id="cross_lingual_zero-shot" style="text-align: center;">Cross-Lingual Zero-shot Generation</h2>
 	<p>Prompt and text are from the demo page of Seed-TTS.</p>
@@ -152,7 +166,7 @@ By operating on extremely short latent sequences, VoxFlash achieves millisecond-
 			</table>
 		</div>
 	<br>
-</div> -->
+</div>
 
 
 
